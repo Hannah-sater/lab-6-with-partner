@@ -8,6 +8,7 @@ def main_menu():
     print('3. Quit')
     print()
 
+
 def encode(user_input):
     user_password = []
     user_password[:0] = user_input
@@ -35,6 +36,16 @@ def encode(user_input):
             encoded_password = encoded_password + '2'
     return encoded_password
 
+
+# Riley Jacobs
+def decode(encoded_password):
+    original_password = ""
+    for digit in encoded_password:
+        original_digit = (int(digit) - 3) % 10
+        original_password += str(original_digit)
+    return original_password
+
+
 if __name__ == '__main__':
     main_menu()
     print('Please enter an option: ', end='')
@@ -57,6 +68,3 @@ if __name__ == '__main__':
             option = str(input())
         if option == '3':
             break
-
-
-
